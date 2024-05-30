@@ -1,0 +1,81 @@
+.content_4_wrapper {
+  margin-top: 50px;
+  height: 90%;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr;
+}
+
+.content_4_grid:nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+.content_4_grid:nth-child(1) h1 {
+  color: var(--primarycolor);
+  font-family: var(--primaryfont);
+}
+
+.content_4_grid:nth-child(1) span {
+  color: var(--secondarycolor);
+}
+
+.content_4_grid:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 30px;
+}
+.projects {
+  position: relative;
+  font-family: protest strike;
+}
+
+.bg_hover {
+  height: 83%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.432);
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none; /* Ensure the overlay doesn't block interactions */
+  transition: 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primarycolor);
+}
+
+.projects img {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  position: relative; /* Ensure the image is positioned for the overlay to work */
+  transition: 0.5s ease;
+}
+
+.projects img:hover + .bg_hover {
+  opacity: 1;
+}
+
+.project_title {
+  color: var(--primarycolor);
+  position: absolute;
+  right: 10px;
+  font-size: var(--big);
+  z-index: 2;
+}
+
+@media screen and (max-width: 437px) {
+  .content_4_wrapper {
+    height: 100%;
+  }
+
+  .project_title {
+    font-size: var(--medium);
+  }
+}

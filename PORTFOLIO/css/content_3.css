@@ -1,0 +1,143 @@
+.content_3_wrapper {
+  height: 100%;
+  width: 95%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-gap: 80px;
+  font-family: poppins;
+}
+
+.content_3_grid:nth-child(1) {
+  display: flex;
+  align-items: center;
+  padding-left: 27px;
+}
+
+.content_3_grid:nth-child(1) h1 {
+  font-size: var(--big);
+  color: var(--primarycolor);
+}
+
+.content_3_grid:nth-child(1) span {
+  color: var(--secondarycolor);
+}
+
+.content_3_grid:nth-child(2) {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  position: relative;
+  grid-gap: 50px;
+}
+
+.timeline_dash {
+  position: absolute;
+  content: "";
+  border: dashed 1px grey;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+
+.timeline_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.timeline_grid:nth-child(3) .timeline_img {
+  align-items: start;
+  justify-content: end;
+}
+
+.timeline_grid:nth-child(3) .timeline_desc {
+  position: relative;
+}
+
+.timeline_grid:nth-child(3) .timeline_dot {
+  top: 0px;
+}
+
+.timeline_img {
+  display: flex;
+  align-items: start;
+  padding-inline: 30px;
+  position: relative;
+}
+
+.timeline_dot {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: var(--secondarycolor);
+  left: -15px;
+  top: 0;
+}
+
+.timeline_img img {
+  height: 120px;
+  width: 130px;
+  border-radius: 15px;
+}
+
+.timeline_desc {
+  display: grid;
+  grid-auto-rows: 0.7fr 1fr;
+  color: var(--primarycolor);
+  padding-inline: 30px;
+  grid-gap: 20px;
+}
+
+.desc_grid:nth-child(1) {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.desc_grid:nth-child(1) h4 {
+  color: grey;
+  font-weight: var(--fmedium);
+}
+.desc_grid:nth-child(1) em {
+  color: grey;
+}
+
+.desc_grid:nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+
+.desc_grid:nth-child(2) h4 {
+  font-weight: var(--light);
+}
+
+@media screen and (max-width: 667px) {
+  .timeline_grid {
+    grid-template-columns: 1fr;
+  }
+  .timeline_dash {
+    left: 1px;
+  }
+  .timeline_grid {
+    width: 100%;
+    grid-template-areas:
+      "img"
+      "desc";
+  }
+  .timeline_desc {
+    grid-area: desc;
+  }
+  .timeline_img {
+    grid-area: img;
+  }
+  .timeline_grid:nth-child(3) .timeline_img {
+    align-items: start;
+    justify-content: start;
+  }
+  .timeline_grid:nth-child(3) .timeline_dot {
+    top: -150px;
+  }
+}
